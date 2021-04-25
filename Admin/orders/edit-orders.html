@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        [data-type="validator-error"] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3 class="">Edit Orders
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form action="" id="my-form">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Name</label>
+                                                            <input type="text" placeholder="Name..." class="form-control" name="name" data-rule="required">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Address</label>
+                                                            <textarea name="address" id="" cols="30" rows="10" placeholder="Address" class="form-control" name="address" data-rule="required"></textarea>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Phone</label>
+                                                            <input type="text" placeholder="Phone..." class="form-control" name="phone" data-rule="required|phone">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Email</label>
+                                                            <input type="text" placeholder="Email..." class="form-control" name="email" data-rule="required|email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-danger">Save</button>
+                                                        <a href="list-orders.html" class="btn btn-primary">Cancel</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!---------------------------- end ------------------------------------->
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+    </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    validate
+    <script src="../../layout/js-form-validator.min.js"></script>
+
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+
+    <!-- //firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id_orders = params.get('id');
+
+        // validate 
+        var Validator = new Validator(document.querySelector('#my-form'), function(err, res) {
+            if (res === true) {
+                // goi ham add 
+                editOrder();
+            }
+            return false;
+        }, {
+            messages: {
+                en: {
+                    required: {
+                        empty: "Trường này không được để trống !",
+                        incorrect: "Nhập sai thông tin !"
+                    },
+                    email: {
+                        empty: "Hãy nhập đúng định dạng email !",
+                        incorrect: "Hãy nhập đúng định dạng email !"
+                    },
+                    phone: {
+                        empty: "Hãy nhập đúng định dạng phone !",
+                        incorrect: "Hãy nhập đúng định dạng phone !"
+                    }
+                }
+            }
+        });
+        var api = "http://localhost:3000/orders";
+        // lay gia tri cu
+        fetch(`${api}/${id_orders}`, {
+                method: "GET",
+                dataType: "json",
+            })
+            .then(reponse => reponse.json())
+            .then(data => {
+                document.querySelector(`[name="name"]`).value = data.name;
+                document.querySelector(`[name="phone"]`).value = data.phone;
+                document.querySelector(`[name="email"]`).value = data.email;
+                document.querySelector(`[name="address"]`).value = data.address;
+            })
+
+
+        function editOrder() {
+            data = {
+                name: document.querySelector(`[name="name"]`).value,
+                phone: document.querySelector(`[name="phone"]`).value,
+                email: document.querySelector(`[name="email"]`).value,
+                address: document.querySelector(`[name="address"]`).value,
+            }
+            fetch(`${api}/${id_orders}`, {
+                    method: "PUT",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(reponse => reponse.json())
+                .then(data => {
+                    if (data.id != undefined) {
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'success',
+                            title: 'Chỉnh sửa dữ liệu thành công !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        window.location.href = "list-orders.html";
+                    }
+                })
+        }
+    </script>
+</body>
+
+</html>

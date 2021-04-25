@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./public/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <div class="ng-header"></div>
+        <!-- Breadcrumb Section Begin -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="./public/img/breadcrumb.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:-85px;">
+                <div class="col-lg-12 text-center ">
+                    <div class="breadcrumb__text ">
+                        <h2>Organi Shop</h2>
+                        <div class="breadcrumb__option ">
+                            <a href="./index.html ">Home</a>
+                            <span>Order</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Section End -->
+        <!-- Checkout Section Begin -->
+        <section class="checkout spad">
+            <div class="container">
+                <div class="checkout__form">
+                    <h4>Billing Details</h4>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <form action="#" onsubmit="saveCart()">
+                                <div class="checkout__input">
+                                    <p>Name<span>*</span></p>
+                                    <input type="text" placeholder="Name..." name="name" required>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="checkout__input">
+                                            <p>Phone<span>*</span></p>
+                                            <input type="text" placeholder="Phone..." name="phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="checkout__input">
+                                            <p>Email<span>*</span></p>
+                                            <input type="text" placeholder="Email..." name="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkout__input">
+                                    <p>Address<span>*</span></p>
+                                    <textarea name="address" style="border: 1px solid #ebebeb" class="address" cols="104" rows="10" required></textarea>
+                                </div>
+
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </form>
+
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                <ul class="product-in-cart">
+                                    <!-- <li>Vegetable’s Package <span>$75.99</span></li>
+                                    <li>Fresh Vegetable <span>$151.99</span></li>
+                                    <li>Organic Bananas <span>$53.99</span></li> -->
+                                </ul>
+                                <div class="checkout__order__subtotal">Total Price <span class="total" style="color:red"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Checkout Section End -->
+
+
+        <!-- -------- fooetr ---------- -->
+        <div class="ng-footer mt-4 "></div>
+    </div>
+
+    <script src="./layout/header.js "></script>
+    <script src="./layout/header.js "></script>
+    <script src="./layout/footer.js "></script>
+    <script src="./layout/getCategory.js"></script>
+    <script>
+        header.getHeader();
+        footer.getFooter();
+        getCate.getCate();
+    </script>
+    <!-- Optional JavaScript -->
+    <script src="./public/js/jquery-3.3.1.min.js "></script>
+    <script src="./public/js/bootstrap.min.js "></script>
+    <script src="./public/js/jquery.nice-select.min.js "></script>
+    <script src="./public/js/jquery-ui.min.js "></script>
+    <script src="./public/js/jquery.slicknav.js "></script>
+    <script src="./public/js/mixitup.min.js "></script>
+    <script src="./public/js/owl.carousel.min.js "></script>
+    <script src="./public/js/main.js "></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
+    <script>
+        // lấy các sản phẩm có trong giỏ hàng và tôngt iền
+
+
+        function getProductIncart() {
+            let content = ``;
+            let cartItem = JSON.parse(localStorage.getItem('productInCart'));
+            if (cartItem) {
+                cartItem.forEach(item => {
+                    content += `
+                        <li>${item.name}<span>${item.price}</span></li>
+                    `;
+                });
+                document.querySelector('.product-in-cart').innerHTML = content;
+            }
+
+        }
+
+        getProductIncart();
+
+
+        function countProductInCart() {
+            let cartNumber = 0;
+            let price = 0;
+            let cartItem = JSON.parse(localStorage.getItem('productInCart'));
+            if (cartItem) {
+                cartItem.forEach(item => {
+                    cartNumber = item.quantity += cartNumber;
+                    price = item.totalPrice += price;
+                })
+                document.querySelector('.count').innerHTML = cartNumber;
+                document.querySelector('.price').innerHTML = price + "đ";
+                document.querySelector('.total').innerHTML = price + "đ";
+            }
+        }
+        countProductInCart();
+
+
+        // lưu vào order và order detail
+
+        function saveCart() {
+            event.preventDefault();
+            let apiOrder = "http://localhost:3000/orders";
+            let apiOrderDetail = "http://localhost:3000/order_details";
+            let promise = new Promise(resolve => {
+                var today = new Date();
+                let data = {
+                    name: document.querySelector('[name="name"]').value,
+                    address: document.querySelector('[name="address"]').value,
+                    email: document.querySelector('[name="email"]').value,
+                    phone: document.querySelector('[name="phone"]').value,
+                    created_at: today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear(),
+                    status: "unfinished"
+                }
+
+                fetch(apiOrder, {
+                        method: "POST",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(jsondata => {
+                        var dataOrder = jsondata;
+                        return resolve(dataOrder);
+                        console.log(dataOrder);
+                    })
+            })
+            promise
+                .then(orders => {
+                    // luu vao bang order detail
+                    let cartItem = JSON.parse(localStorage.getItem('productInCart'));
+                    console.log(cartItem);
+                    for (var i = 0; i < cartItem.length; i++) {
+                        let item = cartItem[i];
+                        let datas = {
+                            orderId: orders.id,
+                            productId: item.id,
+                            quantity: item.quantity
+                        }
+                        fetch(apiOrderDetail, {
+                                method: "POST",
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(datas)
+                            })
+                            .then(response => response.json())
+                            .then(jsondataa => {
+                                var dataOrder = jsondataa;
+                                return resolve(dataOrder);
+                            })
+                    }
+                })
+                .then(() => {
+                    localStorage.clear();
+                    alert("Thanh toán thành công !");
+                    window.location.href = "index.html";
+                })
+
+        }
+    </script>
+
+</body>
+
+
+</html>

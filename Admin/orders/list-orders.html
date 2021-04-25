@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin | List categories</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3 class="">List orders</h3>
+                                                    </h3>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- form start -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table
+                                                        table-bordered">
+                                                    <thead>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Phone</th>
+                                                        <th width="100">Created</th>
+                                                        <th>Status</th>
+                                                        <th>Address</th>
+                                                        <th width="160px" class="text-center">
+                                                            <a href="add-categories.html" class="btn
+                                                                    btn-info
+                                                                    text-white">
+                                                                <i class="fas fa-plus">
+                                                                    </i>
+                                                            </a>
+                                                        </th>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!---------------------------- end ------------------------------------->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- validate form -->
+    <script src="../../layout/js-form-validator.min.js"></script>
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+
+    <!-- AdminLTE for demo purposes -->
+    <script>
+        var api_orders = "http://localhost:3000/orders";
+        var api_orders_detail = "http://localhost:3000/order_details";
+
+        fetch(api_orders, {
+                method: "GET",
+                dataType: "json"
+            })
+            .then(reponse => reponse.json())
+            .then(data => {
+                var content = ``;
+                data.forEach(element => {
+                    content += `
+                        <tr OId="${element.id}">
+                            <td>${element.id}</td>
+                            <td>${element.name}</td>
+                            <td>${element.email}</td>
+                            <td>${element.phone}</td>
+                            <td>${element.created_at}</td>
+                            <td><span class="badge badge-danger text-white">${element.status}</span></td>
+                            <td>${element.address}</td>
+                            <td>
+                                <a href="edit-orders.html?id=${element.id}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="javascript:;" class="btn btn-danger" onclick="removeOrders(${element.id})"><i class="fas fa-trash-alt"></i></a>
+                                <a href="orders-detail.html?id=${element.id}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                            </td>                        
+                        </tr>
+                    `;
+                })
+
+                document.querySelector('tbody').innerHTML = content;
+            })
+
+
+        async function removeOrders(id) {
+            var api = `http://localhost:3000/orders/${id}`;
+            let con = confirm("Bạn có chắc chắn muốn xoá không !");
+            if (con) {
+                let dataOrders = await fetch(`${api}?_embed=order_details`).then(response => response.json());
+                console.log(dataOrders);
+                for (let i = 0; i < dataOrders.length; i++) {
+                    let orders_details = dataOrders[i];
+                    const deleteOrdersDetail = await fetch(`${api_orders_detail}/${orders_details.id}`, {
+                            method: "DELETE",
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                        .then(res => res.json())
+                }
+
+                await fetch(`${api_orders}/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                    })
+                    .then(() => {
+                        document.querySelector(`[OId = "${id}"]`).remove();
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'success',
+                            title: 'Xoá dữ liệu thành công !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    })
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

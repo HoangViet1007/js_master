@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Default box -->
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <h1>Dashboard</h1>
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="info-box bg-gradient-info">
+                                                <span class="info-box-icon"><i class="nav-icon far fa-images" class="text-gray-300"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">Slide</span>
+                                                    <span class="info-box-number" id="slide">7</span>
+
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 70%"></div>
+                                                    </div>
+                                                    <span class="progress-description">
+                                                        70% Increase in 30 Days
+                                                    </span>
+                                                </div>
+                                                <!-- /.info-box-content -->
+                                            </div>
+                                        </div>
+
+                                        <!-- category s -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="info-box bg-gradient-warning">
+                                                <span class="info-box-icon"><i class="nav-icon fa fa-calendar" style="color:white;" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">category</span>
+                                                    <span class="info-box-number" id="cate" style="color: white">41,410</span>
+
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 70%"></div>
+                                                    </div>
+                                                    <span class="progress-description">
+                                                        70% Increase in 30 Days
+                                                    </span>
+                                                </div>
+                                                <!-- /.info-box-content -->
+                                            </div>
+                                        </div>
+
+                                        <!-- product -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="info-box bg-gradient-success">
+                                                <span class="info-box-icon"> <i
+                                                        class="fa fa-shopping-cart text-gray-300"
+                                                        aria-hidden="true"></i></span>
+
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">Product</span>
+                                                    <span class="info-box-number" id="product">70</span>
+
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 70%"></div>
+                                                    </div>
+                                                    <span class="progress-description">
+                                                        70% Increase in 30 Days
+                                                    </span>
+                                                </div>
+                                                <!-- /.info-box-content -->
+                                            </div>
+                                        </div>
+
+                                        <!-- comment -->
+                                        <div class="col-xl-3 col-md-6 mb-4">
+                                            <div class="info-box bg-danger">
+                                                <span class="info-box-icon"><i class="fab fa-blogger-b"></i></span>
+
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">Orders</span>
+                                                    <span class="info-box-number" id="orders">124</span>
+
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 70%"></div>
+                                                    </div>
+                                                    <span class="progress-description">
+                                                        70% Increase in 30 Days
+                                                    </span>
+                                                </div>
+                                                <!-- /.info-box-content -->
+                                            </div>
+                                        </div>
+                                        <!-- -------------------------- end ------------------------------------->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- /.content -->
+            </div>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="../../layout//asideAdmin.js"></script>
+        <script src="../../layout/navAdmin.js"></script>
+        <script>
+            asideAdmin.getasideAdmin();
+            navAdmin.getnavAdmin();
+        </script>
+        <script src="../../public/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../public/dist/js/adminlte.min.js"></script>
+
+        <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+
+        <!-- AdminLTE for demo purposes -->
+
+        <script>
+            var api_slide = " http://localhost:3000/slides";
+            fetch(api_slide, {
+                    method: "GET",
+                    dataType: "json",
+                })
+                .then(res => res.json())
+                .then(data => {
+                    var slide = data.length;
+                    document.querySelector('#slide').innerHTML = slide;
+                })
+            var api_cate = " http://localhost:3000/categories";
+            fetch(api_cate, {
+                    method: "GET",
+                    dataType: "json",
+                })
+                .then(res => res.json())
+                .then(data => {
+                    var slide = data.length;
+                    document.querySelector('#cate').innerHTML = slide;
+                })
+            var api_pro = " http://localhost:3000/products";
+            fetch(api_pro, {
+                    method: "GET",
+                    dataType: "json",
+                })
+                .then(res => res.json())
+                .then(data => {
+                    var slide = data.length;
+                    document.querySelector('#product').innerHTML = slide;
+                })
+
+            var api_orders = "http://localhost:3000/orders";
+
+            fetch(api_orders, {
+                    method: "GET",
+                    dataType: "json",
+                })
+                .then(res => res.json())
+                .then(data => {
+                    var orders = data.length;
+                    document.querySelector('#orders').innerHTML = orders;
+                })
+        </script>
+</body>
+
+</html>

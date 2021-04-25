@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./public/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <div class="ng-header"></div>
+        <!-- Breadcrumb Section Begin -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="./public/img/breadcrumb.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:-85px;">
+                <div class="col-lg-12 text-center ">
+                    <div class="breadcrumb__text ">
+                        <h2>Organi Shop</h2>
+                        <div class="breadcrumb__option ">
+                            <a href="./index.html ">Home</a>
+                            <span>Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Section End -->
+
+        <section class="product spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5">
+                        <div class="sidebar">
+                            <div class="sidebar__item">
+                                <h4>Department</h4>
+                                <ul class="category-list-product"></ul>
+                            </div>
+                            <div class="sidebar__item">
+                                <h4>Price</h4>
+                                <div class="price-range-wrap">
+                                    <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="10" data-max="540">
+                                        <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                    </div>
+                                    <div class="range-slider">
+                                        <div class="price-input">
+                                            <input type="text" id="minamount">
+                                            <input type="text" id="maxamount">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-7">
+                        <div class="filter__item">
+                            <div class="row mb-3">
+                                <h2>Product List</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-5">
+                                    <div class="filter__sort">
+                                        <span>Sort By</span>
+                                        <select onchange="search2()" class="sort">
+                                            <option value="0">Default</option>
+                                            <option value="gia-tang-dan">Giá tăng dần</option>
+                                            <option value="gia-giam-dan">Giá giảm dần</option>
+        
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 offset-4">
+                                    <form action="">
+                                        <input type="text" placeholder="Search..." name="search" onkeyup="search2()" class="keyword form-control" style="border-radius: 0;">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3" id="product-list"></div>
+                        <div class="product__pagination">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------- fooetr ---------- -->
+        <div class="ng-footer mt-4 "></div>
+    </div>
+
+    <script src="./layout/header.js "></script>
+    <script src="./layout/header.js "></script>
+    <script src="./layout/footer.js "></script>
+    <script src="./layout/getCategory.js"></script>
+    <script>
+        header.getHeader();
+        footer.getFooter();
+        getCate.getCate();
+    </script>
+    <!-- Optional JavaScript -->
+    <script src="./public/js/jquery-3.3.1.min.js "></script>
+    <script src="./public/js/bootstrap.min.js "></script>
+    <script src="./public/js/jquery.nice-select.min.js "></script>
+    <script src="./public/js/jquery-ui.min.js "></script>
+    <script src="./public/js/jquery.slicknav.js "></script>
+    <script src="./public/js/mixitup.min.js "></script>
+    <script src="./public/js/owl.carousel.min.js "></script>
+    <script src="./public/js/main.js "></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
+    <script>
+        var api_get_cate = "http://localhost:3000/categories";
+        var api_get_product = "http://localhost:3000/products";
+
+        // lay id tren duong dan xuong 
+        const params = new URLSearchParams(window.location.search);
+        const cateId = params.get('cateId');
+
+        if (!cateId) {
+            api_get_product += `?_expand=category`;
+        } else {
+            api_get_product += `?categoryId=${cateId}&_expand=category`;
+        }
+        console.log(api_get_product);
+
+        fetch(api_get_cate, {
+                method: "GET",
+                dataType: "json",
+            })
+            .then(response => response.json())
+            .then(data => {
+                var content = `<li><a href="list-product.html">All product</a></li>`;
+                data.forEach(element => {
+                    content += `
+                        <li style="cursor: pointer;"><a href="list-product.html?cateId=${element.id}">${element.name}</a></li>
+                    `;
+                })
+                return document.querySelector('.category-list-product').innerHTML = content;
+            })
+
+        fetch(`${api_get_product}`, {
+                method: "GET",
+                dataType: "json"
+            })
+            .then(response => response.json())
+            .then(data => {
+                var content = ``;
+                data.forEach(element => {
+                    var price = parseFloat(element.price);
+                    var price_sale = parseFloat(element.price * element.sale / 100);
+                    var price_total = price + price_sale;
+                    content += `
+                        <div class="col-lg-4 mb-5">
+                            <div class="product__discount__item">
+                                <div class="product__discount__item__pic set-bg" data-setbg="${element.image}">
+                                    <img src="${element.image}" alt="" style="background-size: contain;">
+                                    <div class="product__discount__percent">${element.sale}%</div>
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="product-detail.html?id=${element.id}"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="add-cart fa fa-shopping-cart" onclick="addCart(${element.id})"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__discount__item__text">
+                                    <span>${element.category.name}</span>
+                                    <h5><a href="product-detail.html?id=${element.id}">${element.name}</a></h5>
+                                    <div class="product__item__price">${element.price} <span>${price_total}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                document.querySelector('#product-list').innerHTML = content;
+            })
+
+
+        function search2() {
+            let sort = document.querySelector('.sort').value;
+            let keyword = document.querySelector('.keyword').value;
+            let api = "http://localhost:3000/products";
+
+            // lay id tren dương dan xuong 
+            const params = new URLSearchParams(window.location.search);
+            const cateId = params.get('cateId');
+
+            if (!cateId) {
+                api += `?_expand=category`;
+            } else {
+                api += `?categoryId=${cateId}&_expand=category`;
+            }
+
+            console.log(api);
+
+            switch (sort) {
+                case "0":
+                    api += ``;
+                    break;
+                case "gia-tang-dan":
+                    api += `&_sort=price&_order=asc`;
+                    break;
+                case "gia-giam-dan":
+                    api += `&_sort=price&_order=desc`;
+                    break;
+            }
+
+            if (keyword.length > 0) {
+                api += `&name_like=${keyword}`
+            }
+            fetch(`${api}`, {
+                    method: "GET",
+                    dataType: "json"
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var content = ``;
+                    data.forEach(element => {
+                        var price = parseFloat(element.price);
+                        var price_sale = parseFloat(element.price * element.sale / 100);
+                        var price_total = price + price_sale;
+                        content += `
+                        <div class="col-lg-4 mb-5">
+                            <div class="product__discount__item">
+                                <div class="product__discount__item__pic set-bg" data-setbg="${element.image}">
+                                    <img src="${element.image}" alt="" style="background-size: contain;">
+                                    <div class="product__discount__percent">${element.sale}%</div>
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="product-detail.html?id=${element.id}"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="add-cart fa fa-shopping-cart" onclick="addCart(${element.id})"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__discount__item__text">
+                                    <span>${element.category.name}</span>
+                                    <h5><a href="product-detail.html?id=${element.id}">${element.name}</a></h5>
+                                    <div class="product__item__price">${element.price} <span>${price_total}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    });
+                    document.querySelector('#product-list').innerHTML = content;
+                })
+        }
+
+        // lay za
+    </script>
+
+    <script src="./layout/cart.js"></script>
+
+</body>
+
+
+</html>

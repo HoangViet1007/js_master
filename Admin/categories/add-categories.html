@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin | Add categories</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        [data-type="validator-error"] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-10 offset-1">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-11">
+                                                    <h3 class="">Add categories</h3>
+                                                    </h3>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- form start -->
+
+                                        <form action="" class="mt-4 mb-4" id="my-form">
+                                            <div class="row">
+                                                <div class="col-md-6 offset-3">
+                                                    <div class="form-group">
+                                                        <label for="">Name categories</label>
+                                                        <input type="text" placeholder="Name..." class="form-control mb-1" name="name" data-rule="required|minlength-4|maxlength-20">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger">Save</button>
+                                                        <a href="list-categories.html" class="btn btn-primary">Cancel</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!---------------------------- end ------------------------------------->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+
+    <!-- validate form -->
+    <script src="../../layout/js-form-validator.min.js"></script>
+    <script>
+        var api_url = "http://localhost:3000/categories";
+
+        // validate 
+        var Validator = new Validator(document.querySelector('#my-form'), function(err, res) {
+            if (res === true) {
+                // goi ham add 
+                createCategory();
+            }
+            return false;
+        }, {
+            messages: {
+                en: {
+                    required: {
+                        empty: "Hãy nhập tên danh mục !",
+                        incorrect: "Nhập sai thông tin !"
+                    },
+                    minlength: {
+                        empty: "Tên danh mục ít nhất có {0} kí tự !",
+                        incorrect: "Tên danh mục ít nhất có {0} kí tự !"
+                    },
+                    maxlength: {
+                        empty: "Tên danh mục nhiều nhất {0} kí tự !",
+                        incorrect: "Tên danh mục nhiều nhất {0} kí tự !"
+                    }
+                }
+            }
+        });
+
+
+        function createCategory() {
+            let data = {
+                name: document.querySelector('[name="name"]').value
+            };
+
+            // gui request 
+            fetch(api_url, {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(reponse => reponse.json())
+                .then(data => {
+                    if (data.id != undefined) {
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'success',
+                            title: 'Thêm dữ liệu thành công !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                        window.location.href = "list-categories.html";
+                    }
+                })
+        }
+    </script>
+
+    <!-- AdminLTE for demo purposes -->
+</body>
+
+</html>

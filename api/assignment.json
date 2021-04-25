@@ -1,0 +1,286 @@
+{
+  "products": [
+    {
+      "categoryId": 3,
+      "name": "Banana",
+      "price": 29000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A23%3A49%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-2.jpg?alt=media&token=57cebe81-afb0-4fba-849e-f62888ef4ffd",
+      "sale": "4",
+      "quantity": "40",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , giúp có được 1 làn da mịn màng và trắng hồng !",
+      "id": 2
+    },
+    {
+      "categoryId": 1,
+      "name": "Choysum",
+      "price": 24000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A26%3A49%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-details-3.jpg?alt=media&token=102c4eac-e292-417d-bc6f-a1cff9579b16",
+      "sale": "4",
+      "quantity": "40",
+      "detail": "Rau củ quả tươi rất tốt cho sức khoẻ , giúp có được 1 làn da mịn màng và trắng hồng !",
+      "id": 3
+    },
+    {
+      "categoryId": 1,
+      "name": "Carrot",
+      "price": 22000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A32%3A51%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-100.jpg?alt=media&token=12fab475-3543-4e2b-a584-25f690090593",
+      "sale": 4,
+      "quantity": 40,
+      "detail": "Rau củ quả tươi rất tốt cho sức khoẻ , giúp có được 1 làn da mịn màng và trắng hồng !",
+      "id": 4
+    },
+    {
+      "categoryId": 2,
+      "name": "Orange juice",
+      "price": 19000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A36%3A47%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-11.jpg?alt=media&token=19b8c3cb-97b4-44c9-ad66-f8543cd9989d",
+      "sale": "4",
+      "quantity": "40",
+      "detail": "Nước hoa quả rất tốt cho sức khoẻ , giúp có được 1 làn da mịn màng và trắng hồng !",
+      "id": 5
+    },
+    {
+      "categoryId": 2,
+      "name": "Juice grapes fruit",
+      "price": 19000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A37%3A54%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-9.jpg?alt=media&token=29daf2ae-4b10-4fc9-9203-dbe05af76fcd",
+      "sale": "4",
+      "quantity": "40",
+      "detail": "Nước hoa quả rất tốt cho sức khoẻ , giúp có được 1 làn da mịn màng và trắng hồng !",
+      "id": 6
+    },
+    {
+      "categoryId": 3,
+      "name": "Mango",
+      "price": "69000",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A34%3A39%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-6.jpg?alt=media&token=7edc069d-e63d-48af-853f-e2a5e65ac352",
+      "sale": "2",
+      "quantity": "23",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , đem lại làn da mịn màng !",
+      "id": 8
+    },
+    {
+      "categoryId": 3,
+      "name": "Watermelon",
+      "price": 27000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A39%3A05%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-7.jpg?alt=media&token=3d14297e-5858-46d0-a672-e5a83ede5e51",
+      "sale": "4",
+      "quantity": "57",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , đem lại làn da mịn màng !",
+      "id": 9
+    },
+    {
+      "categoryId": 1,
+      "name": " Bell pepper",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A41%3A01%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-details-2.jpg?alt=media&token=6266ea51-c10a-4e52-a2f6-dfd4ca7ab1ba",
+      "price": 16000,
+      "sale": "3",
+      "quantity": "34",
+      "detail": "Rau củ quả tươi rất tốt cho sức khoẻ , đem lại một làn da trắng mịn !",
+      "id": 10
+    },
+    {
+      "categoryId": 3,
+      "name": "Apple",
+      "price": 123000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A43%3A46%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-8.jpg?alt=media&token=67ed7d8c-1759-4b2e-90dd-293d6488bbef",
+      "sale": "4",
+      "quantity": "109",
+      "detail": "Hoa quả tươi rất tốt cho sức khoe , mang lại một làn da trắng mịn !",
+      "id": 11
+    },
+    {
+      "categoryId": 2,
+      "name": " Pineapple juice",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A48%3A38%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-pd-3.jpg?alt=media&token=659370a8-a2cb-4652-8f99-d0bb9ba5777e",
+      "price": 17900,
+      "sale": "3",
+      "quantity": "24",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , mang lại một làn da trắng mịn !",
+      "id": 12
+    },
+    {
+      "categoryId": 4,
+      "name": " Dried grapes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A51%3A42%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-pd-1.jpg?alt=media&token=46114384-a936-499e-98e5-db2bd5a48363",
+      "price": 129000,
+      "sale": "1",
+      "quantity": "49",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , mang lại một làn da trăng mịn !",
+      "id": 13
+    },
+    {
+      "categoryId": 3,
+      "name": "Grapes",
+      "price": 149000,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2021%3A54%3A08%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-product-4.jpg?alt=media&token=f485c734-f358-4bf6-b992-4a36b8cc9b8d",
+      "sale": "4",
+      "quantity": "72",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , đem lại làn da mịn màng !",
+      "id": 14
+    },
+    {
+      "categoryId": 2,
+      "name": "Juice Manago",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2022%3A05%3A09%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-juice-manogo.jpg?alt=media&token=d7c383c1-73a5-4999-a560-69b9145bd54b",
+      "price": 22000,
+      "sale": "2",
+      "quantity": "45",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , đem lại làn da mịn màng !",
+      "id": 15
+    },
+    {
+      "categoryId": 1,
+      "name": "Roasted corn",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2022%3A10%3A17%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-ngo.jpg?alt=media&token=ea058202-1d93-4033-88f4-cfe1551700ca",
+      "price": 32000,
+      "sale": "4",
+      "quantity": "24",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , đem lại làn da mịn màng !",
+      "id": 16
+    },
+    {
+      "categoryId": 4,
+      "name": "Dried mango",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Upload%2FSat%20Apr%2010%202021%2022%3A16%3A56%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-ma.jpg?alt=media&token=d38ea086-c892-4058-aa83-ed09ac866cc2",
+      "price": 47000,
+      "sale": "2",
+      "quantity": "23",
+      "detail": "Hoa quả tươi rất tốt cho sức khoẻ , mang lại một làn da trăng mịn !",
+      "id": 17
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Vegetable"
+    },
+    {
+      "id": 2,
+      "name": "Juice"
+    },
+    {
+      "id": 3,
+      "name": "Fresh Fruit"
+    },
+    {
+      "name": "Dried Fruit",
+      "id": 4
+    }
+  ],
+  "slides": [
+    {
+      "status": 1,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Slide%2FWed%20Apr%2014%202021%2002%3A15%3A33%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-banner.jpg?alt=media&token=e8f9ffcb-8c60-42f4-9330-7f53086eae56",
+      "id": 1
+    },
+    {
+      "status": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Slide%2FWed%20Apr%2014%202021%2002%3A28%3A18%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-banner2.jpeg?alt=media&token=923257da-78a2-4b6a-882d-1e9c36176931",
+      "id": 2
+    },
+    {
+      "status": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Slide%2FWed%20Apr%2014%202021%2001%3A57%3A53%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-banner1.jpeg?alt=media&token=b59d986d-5b39-4eff-a63b-be493e0d86b0",
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "status": 1,
+      "title": "Cooking tips make cooking simple",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Slide%2FWed%20Apr%2014%202021%2001%3A57%3A53%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-banner1.jpeg?alt=media&token=b59d986d-5b39-4eff-a63b-be493e0d86b0",
+      "content": "Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+    },
+    {
+      "id": 1,
+      "status": 1,
+      "title": "Cooking tips make cooking simple",
+      "image": "https://firebasestorage.googleapis.com/v0/b/jsmaster-81d83.appspot.com/o/Slide%2FWed%20Apr%2014%202021%2001%3A57%3A53%20GMT%2B0700%20(Gi%E1%BB%9D%20%C4%90%C3%B4ng%20D%C6%B0%C6%A1ng)-banner1.jpeg?alt=media&token=b59d986d-5b39-4eff-a63b-be493e0d86b0",
+      "content": "Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+    }
+  ],
+  "orders": [
+    {
+      "name": "Nguyễn Duy Việt Anh1",
+      "phone": "0859850000",
+      "email": "vanh@gmail.com",
+      "address": "Ngõ 189 , huyện Hoài Đức , Hà Nội ",
+      "id": 1
+    },
+    {
+      "name": "Đào Ánh Tuyết",
+      "address": "Ngõ 72 Lệ Chi , Gia Lâm , Hà Nội",
+      "email": "anhtuyet@gmail.com",
+      "phone": "0827541636",
+      "created_at": "18-4-2021",
+      "status": "unfinished",
+      "id": 2
+    },
+    {
+      "name": "Chúc Anh Quân",
+      "phone": "037456332",
+      "email": "quan@gmail.com",
+      "address": "Ngõ 27 Kiều Mai , Nam Từ Liêm , Hà Nội",
+      "id": 3
+    }
+  ],
+  "order_details": [
+    {
+      "orderId": 1,
+      "productId": 5,
+      "quantity": 2,
+      "id": 1
+    },
+    {
+      "orderId": 1,
+      "productId": 2,
+      "quantity": 2,
+      "id": 2
+    },
+    {
+      "orderId": 1,
+      "productId": 4,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "orderId": 2,
+      "productId": 11,
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "orderId": 2,
+      "productId": 12,
+      "quantity": 2,
+      "id": 5
+    },
+    {
+      "orderId": 2,
+      "productId": 14,
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "orderId": 3,
+      "productId": 8,
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "orderId": 3,
+      "productId": 9,
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "orderId": 3,
+      "productId": 17,
+      "quantity": 1,
+      "id": 9
+    }
+  ]
+}

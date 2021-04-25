@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3 class="">List slide</h3>
+                                                    </h3>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- form start -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table
+                                                        table-bordered">
+                                                    <thead>
+                                                        <th width="20">ID</th>
+                                                        <th width="200" class="text-center">Status</th>
+                                                        <th>Image</th>
+                                                        <th width="120px" class="text-center">
+                                                            <a href="add-slide.html" class="btn
+                                                                    btn-info
+                                                                    text-white">
+                                                                <i class="fas fa-plus">
+                                                                    </i>
+                                                            </a>
+                                                        </th>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!---------------------------- end ------------------------------------->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+    <!-- validate form -->
+    <script src="../../layout/js-form-validator.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script>
+        var api = "http://localhost:3000/slides";
+        // lay za tat ca slide
+        fetch(api, {
+                method: "GET",
+                dataType: "json",
+            })
+            .then(response => response.json())
+            .then(data => {
+                var content = ``;
+                data.forEach(element => {
+                    content += `
+                        <tr slideId="${element.id}">
+                            <td>${element.id}</td>
+                            <td class="text-center"><span class="badge badge-danger">${element.status == 0 ? "disable" : "active"}</span></td>
+                            <td>
+                                <img src="${element.image}" alt="" width="400" height="200">
+                            </td>
+                            <td>
+                                <a href="edit-slide.html?id=${element.id}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="javascript:;" class="btn btn-danger" onclick="removeSlide(${element.id})"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    `;
+                })
+
+                document.querySelector('tbody').innerHTML = content;
+            })
+
+        // xoá slide
+        function removeSlide(id) {
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn xoá?',
+                text: "Nếu xoá sẽ không khôi phục được dữ liệu !",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Đồng ý',
+                cancelButtonText: 'Huỷ'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const remove_api = `http://localhost:3000/slides/${id}`;
+                    fetch(remove_api, {
+                            method: "DELETE",
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                        .then(() => {
+                            document.querySelector(`[slideId="${id}"]`).remove();
+                            Swal.fire({
+                                position: 'center-center',
+                                icon: 'success',
+                                title: 'Xoá dữ liệu thành công !',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        })
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

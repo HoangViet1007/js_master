@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        [data-type="validator-error"] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3 class="">Edit product
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form action="" id="my-form">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label for="">Name product</label>
+                                                            <input type="text" placeholder="Name.." class="name form-control" name="name" data-rule="required|minlength-4">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">Price</label>
+                                                            <input type="text" placeholder="Price..." class="price form-control" name="price" data-rule="required|float|length-2-100">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">Detail</label>
+                                                            <textarea name="detail" id="" cols="30" rows="12" placeholder="Detail..." class="form-control" data-rule="required|minlength-20"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="from-group">
+                                                            <label for="">Category</label>
+                                                            <select name="categoryId" id="categoryId" class="categoryId form-control mb-3">
+                                                                <option value="">--- Chon ----</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">Quantity</label>
+                                                            <input type="text" placeholder="Quantity..." class="quantity form-control" name="quantity" data-rule="required|float">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">Sale</label>
+                                                            <input type="text" placeholder="Sale..." class="quantity form-control" name="sale" data-rule="required|float">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">Image</label>
+                                                            <input type="file" name="image" placeholder="Image..." id="image" class="image form-control" onchange="uploadImage(event)">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <img src="" alt="" class="ig" width="160px" height="160px" style="margin-left: 70px;display:none">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <button type="submit" class="btn btn-danger mr-3">Save</button>
+                                                    <a href="list-product.html" class="btn btn-primary">Cancel</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!---------------------------- end ------------------------------------->
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+    </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    validate
+    <script src="../../layout/js-form-validator.min.js"></script>
+
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+
+    <!-- //firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDz7qzzkq6oyYruCZI6kgsxbOpL6wABHIc",
+            authDomain: "jsmaster-81d83.firebaseapp.com",
+            projectId: "jsmaster-81d83",
+            storageBucket: "jsmaster-81d83.appspot.com",
+            messagingSenderId: "746803723677",
+            appId: "1:746803723677:web:f5eddf2f23b04e79b60374"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let storage = firebase.storage();
+        var image = "";
+
+        // bắt đầu up ảnh 
+
+        function uploadImage(event) {
+            let file = event.target.files[0];
+            let filename = new Date() + "-" + file.name;
+            storage.ref('Upload/' + filename).put(file)
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url => {
+                    image = url;
+                    console.log(url);
+                    document.querySelector('.ig').style.display = 'block';
+                    document.querySelector('.ig').setAttribute('src', image);
+                    console.log(image);
+                })
+        }
+
+        // validate 
+        var Validator = new Validator(document.querySelector('#my-form'), function(err, res) {
+            if (res === true) {
+                // goi ham add 
+                // createProduct();
+                editProduct();
+            }
+            return false;
+        }, {
+            messages: {
+                en: {
+                    required: {
+                        empty: "Trường này không được để trống !",
+                        incorrect: "Nhập sai thông tin !"
+                    },
+                    minlength: {
+                        empty: "Bạn đã nhập ít hơn {0} kí tự !",
+                        incorrect: "Bạn đã nhập ít hơn {0} kí tự !"
+                    },
+                    maxlength: {
+                        empty: "Bạn đã nhập nhiều hơn {0} kí tự !",
+                        incorrect: "Bạn đã nhập nhiều hơn {0} kí tự !"
+                    },
+                    float: {
+                        empty: "Kí tự nhập vào phải là số !",
+                        incorrect: "Kí tự nhập vào phải là số !"
+                    },
+                    length: {
+                        empty: "Kí tự nhập vào không hợp lệ !",
+                        incorrect: "Kí tự nhập vào không hợp lệ !"
+
+                    },
+                }
+            }
+        });
+
+        //
+        var api_url = "http://localhost:3000/products";
+        var api_url2 = "http://localhost:3000/categories";
+
+        // lấy id xuông 
+
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+
+        let globalcategory = [];
+        let productData = {};
+
+        async function getdata() {
+            // laays het cate  
+            globalcategory = await fetch(api_url2)
+                .then(response => response.json());
+
+            // laays za u lieuj cux 
+            productData = await fetch(`${api_url}/${productId}`)
+                .then(response => response.json())
+        }
+        getdata()
+            .then(() => {
+                let content = ``;
+                globalcategory.forEach(element => {
+                    const selected = element.id == productData.categoryId ? "selected" : "";
+
+                    content += `<option ${selected} value="${element.id}">${element.name}</option>`
+                });
+                document.querySelector('.categoryId').innerHTML = content;
+
+                // in za du lieu cu
+                document.querySelector(`[name="name"]`).value = productData.name;
+                document.querySelector(`[name="sale"]`).value = productData.sale;
+                document.querySelector(`[name="quantity"]`).value = productData.quantity;
+                document.querySelector(`[name="detail"]`).value = productData.detail;
+                document.querySelector(`[name="price"]`).value = productData.price;
+                image = productData.image;
+                document.querySelector('.ig').style.display = 'block';
+                document.querySelector('.ig').setAttribute('src', productData.image);
+            })
+
+
+        // edit
+        function editProduct() {
+            productData = {
+                categoryId: parseInt(document.querySelector(`[name="categoryId"]`).value),
+                name: document.querySelector(`[name="name"]`).value,
+                price: parseFloat(document.querySelector(`[name="price"]`).value),
+                image: image,
+                sale: parseInt(document.querySelector(`[name="sale"]`).value),
+                quantity: parseInt(document.querySelector(`[name="quantity"]`).value),
+                detail: document.querySelector(`[name="detail"]`).value,
+            }
+
+            fetch(`${api_url}/${productId}`, {
+                    method: "PUT",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.id != undefined) {
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'success',
+                            title: 'Update dữ liệu thành công !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        window.location.href = 'list-product.html';
+                    }
+                })
+        }
+
+        //
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./public/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <div class="ng-header"></div>
+        <!-- Breadcrumb Section Begin -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="./public/img/breadcrumb.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:-85px;">
+                <div class="col-lg-12 text-center ">
+                    <div class="breadcrumb__text ">
+                        <h2>Organi Shop</h2>
+                        <div class="breadcrumb__option ">
+                            <a href="./index.html ">Home</a>
+                            <span>Shop detail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Section End -->
+
+        <!-- Product Details Section Begin -->
+        <section class="product-details spad">
+            <div class="container">
+                <div class="row" id="product-details">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product__details__pic">
+                            <div class="product__details__pic__item">
+                                <img class="product__details__pic__item--large" src="./public/img/product/details/product-details-1.jpg" alt="">
+                            </div>
+                            <div class="product__details__pic__slider owl-carousel" id="cate-pro">
+                                <img data-imgbigurl="./public/img/product/details/product-details-2.jpg" src="./public/img/product/details/thumb-1.jpg" alt="">
+                                <img data-imgbigurl="./public/img/product/details/product-details-3.jpg" src="./public/img/product/details/thumb-2.jpg" alt="">
+                                <img data-imgbigurl="img/product/details/product-details-5.jpg" src="./public/img/product/details/thumb-3.jpg" alt="">
+                                <img data-imgbigurl="./public/img/product/details/product-details-4.jpg" src="./public/img/product/details/thumb-4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product__details__text">
+                            <h3>${product.name}</h3>
+                            <div class="product__details__rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <span>(18 reviews)</span>
+                            </div>
+                            <div class="product__details__price">$50.00</div>
+                            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+                                dui. Proin eget tortor risus.</p>
+                            <div class="product__details__quantity">
+                                <div class="quantity">
+                                    <div class="pro-qty">
+                                        <input type="text" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="primary-btn">ADD TO CARD</a>
+                            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                            <ul>
+                                <li><b>Availability</b> <span>In Stock</span></li>
+                                <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
+                                <li><b>Weight</b> <span>0.5 kg</span></li>
+                                <li><b>Share on</b>
+                                    <div class="share">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-product">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title related__product__title">
+                            <h2>Related Product</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="pro-lq">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="./public/img/product-1.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="./public/img/produc/product-2.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="./public/img/product/product-3.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="./public/img/produc/product-7.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- -------- fooetr ---------- -->
+        <div class="ng-footer mt-4 "></div>
+    </div>
+
+    <script src="./layout/header.js"></script>
+    <script src="./layout/header.js"></script>
+    <script src="./layout/footer.js"></script>
+    <script src="./layout//getCategory.js"></script>
+    <script>
+        header.getHeader();
+        footer.getFooter();
+        getCate.getCate();
+    </script>
+    <!-- Optional JavaScript -->
+    <script src="./public/js/jquery-3.3.1.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
+    <script src="./public/js/jquery.nice-select.min.js"></script>
+    <script src="./public/js/jquery-ui.min.js"></script>
+    <script src="./public/js/jquery.slicknav.js"></script>
+    <script src="./public/js/mixitup.min.js"></script>
+    <script src="./public/js/owl.carousel.min.js"></script>
+    <script src="./public/js/main.js"></script>
+
+    <script>
+        var api = "http://localhost:3000/products";
+        // laays id treen dduowng dan xuong
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+        const product = "";
+
+        let globalProductDetail = {};
+        let productData = {};
+        let productCategory = {}
+        async function getData() {
+            // product detail
+            globalProductDetail = await fetch(`${api}/${productId}?_expand=category`).then(response => response.json());
+            console.log(globalProductDetail.id);
+            // productcate
+            productCategory = await fetch(`${api}?categoryId=${globalProductDetail.categoryId}`).then(response => response.json());
+            console.log(productCategory);
+        }
+        getData()
+            .then(() => {
+                // in za product detai 
+                var content = `
+                        <div class="col-lg-6 col-md-6">
+                                <div class="product__details__pic">
+                                    <div class="product__details__pic__item">
+                                        <img class="product__details__pic__item--large" src="${globalProductDetail.image}" alt="">
+                                    </div>
+                                    <div class="product__details__pic__slider owl-carousel" id="cate-pro">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="product__details__text">
+                                    <h3>${globalProductDetail.name}<span class="mb-3" style="font-size: 15px;font-weight: 500;color: red;margin-left: 10px;">Category : ${globalProductDetail.category.name}</span></h3>
+                                    <div class="product__details__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <span>(18 reviews)</span>
+                                    </div>
+                                    <div class="product__details__price">${globalProductDetail.price}</div>
+                                    <p>${globalProductDetail.detail}</p>
+                                    <div class="product__details__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="number" value="1" min="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <a href="#" class="add-cart primary-btn" onclick="addCart(${globalProductDetail.id})">ADD TO CARD</a>
+                                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                                    <ul>
+                                        <li><b>Availability</b> <span>In Stock</span></li>
+                                        <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
+                                        <li><b>Weight</b> <span>0.5 kg</span></li>
+                                        <li><b>Share on</b>
+                                            <div class="share">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                        `;
+
+                document.querySelector('#product-details').innerHTML = content;
+
+                var conten2 = "";
+                // in za cate lien wan xuong
+                productCategory.forEach(element => {
+                    conten2 += `
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="${element.image}">
+                                    <img src="${element.image}" alt="" style="background-size: contain;">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="product-detail.html?id=${element.id}"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="add-cart fa fa-shopping-cart" onclick="addCart(${element.id})"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">${element.name}</a></h6>
+                                    <h5>${element.price}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    `;
+                })
+
+                document.querySelector('#pro-lq').innerHTML = conten2;
+            })
+    </script>
+
+    <script src="./layout/cart.js"></script>
+
+</body>
+
+</html>
+
+</html>

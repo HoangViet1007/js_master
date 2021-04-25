@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+    <!-- ---- link tynimce ------ -->
+    <script src="https://cdn.tiny.cloud/1/eh2f8jo1q8ypxkz794o9hf1otfkf8ftcygtd3lk4w47hzfrd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <style>
+        [data-type="validator-error"] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!--- nav ------>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-3" id="aside">
+            <!------ aside----->
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 offset-2">
+                            <div class="card" style="margin-top: 20px;">
+                                <div class="card-body">
+                                    <!------------------- phần để cho các layout khác kế thừa vào  ------------------->
+                                    <div class="card card-warning">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3 class="">Add slide</h3>
+                                                    </h3>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- form start -->
+                                        <div class="row">
+                                            <div class="col-md-11 offset-1">
+                                                <form action="" id="my-form">
+                                                    <div class="row">
+                                                        <div class="col-md-11">
+                                                            <div class="form-group">
+                                                                <label for="">Status</label>
+                                                                <select name="status" id="" class="form-control status" data-rule="required">
+                                                                    <option value="">Status</option>
+                                                                    <option value="1">Active</option>
+                                                                    <option value="0">Disable</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="">Image</label>
+                                                                <input type="file" placeholder="Image" class="form-control image" name="image" data-rule="required" onchange="uploadImage(event)">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <img src="" alt="" class="ig form-control" style="display:none;width: 100%;height: 300px;">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-danger mr-2 chan" disabled>Save</button>
+                                                                <a href="list-slide.html" class="btn btn-primary">Cancel</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!---------------------------- end ------------------------------------->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../layout//asideAdmin.js"></script>
+    <script src="../../layout/navAdmin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        asideAdmin.getasideAdmin();
+        navAdmin.getnavAdmin();
+    </script>
+    <script src="../../public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/dist/js/adminlte.min.js"></script>
+
+    <!-- <script src="../../public/plugins/js/tinymce.js"></script> -->
+    <!-- validate form -->
+    <script src="../../layout/js-form-validator.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+
+    <!-- //firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+    <script>
+        var api = "http://localhost:3000/slides";
+        // lay za tat ca slide
+
+        //upload image
+        var firebaseConfig = {
+            apiKey: "AIzaSyDz7qzzkq6oyYruCZI6kgsxbOpL6wABHIc",
+            authDomain: "jsmaster-81d83.firebaseapp.com",
+            projectId: "jsmaster-81d83",
+            storageBucket: "jsmaster-81d83.appspot.com",
+            messagingSenderId: "746803723677",
+            appId: "1:746803723677:web:f5eddf2f23b04e79b60374"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let storage = firebase.storage();
+        var image = "";
+
+        // bắt đầu up ảnh 
+
+        function uploadImage(event) {
+            let file = event.target.files[0];
+            let filename = new Date() + "-" + file.name;
+            storage.ref('Slide/' + filename).put(file)
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url => {
+                    image = url;
+                    document.querySelector('.ig').style.display = 'block';
+                    document.querySelector('.ig').setAttribute('src', image);
+                    console.log(image);
+                })
+                .then(() => {
+                    document.querySelector('.chan').disabled = false;
+                })
+        }
+
+        //validate
+        var Validator = new Validator(document.querySelector('#my-form'), function(err, res) {
+            if (res === true) {
+                // goi ham add 
+                createSlide();
+            }
+            return false;
+        }, {
+            messages: {
+                en: {
+                    required: {
+                        empty: "Trường này không đươc để trống !",
+                        incorrect: "Trường này không đươc để trống !"
+                    }
+                }
+            }
+        });
+
+        function createSlide() {
+            let data = {
+                status: parseInt(document.querySelector(`[name=status]`).value),
+                image: image
+            }
+            fetch(api, {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(jsondata => {
+                    if (jsondata.id != undefined) {
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'success',
+                            title: 'Thêm dữ liệu thành công !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        window.location.href = 'list-slide.html';
+                    }
+                })
+        }
+    </script>
+</body>
+
+</html>
